@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    font-family: "Montserrat", sans-serif;
+    box-sizing: border-box;
+    margin: 0; padding: 0;
+    text-decoration: none;
+    text-transform: capitalize;
+    outline: none; border: none;
+    transition: .2 linear;
+}
+
+body{
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+}
+
+.container{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+.container .dropdown{
+    perspective: 1000px;
+}
+
+.container .dropdown .output{
+    padding: 15px;
+    font-size: 22px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    color: #334;
+    text-align: center;
+    width: 400px;
+    cursor: pointer;
+}
+
+.container .dropdown .lists{
+    background-color: #fff;
+    padding: 5px 10px;
+    border-top: 1px solid rgba(0,0,0,.1);
+    width: 400px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    transform-style: preserve-3d;
+    transform-origin: top;
+    transform: rotateX(-90deg);
+    opacity: 0;
+}
+
+.container .dropdown .lists .item{
+    font-size: 22px;
+    background-color: #eee;
+    color: #334;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.container .dropdown .lists .item:hover{
+    background-color: #334;
+    color: #fff;
+    padding-left: 40px;
+}
+
+.container .dropdown .lists .input_item{
+    font-size: 22px;
+    border: 2px solid #334;
+    margin-top: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    width: 100%;
+    text-transform: none;
+}
+
+.container .dropdown:hover .lists,
+.container .dropdown .lists:hover,
+.container .dropdown  .output:focus .lists,
+.container .dropdown  .output:focus-within .lists{
+    transform: rotateX(0);
+    opacity: 1;
+}
